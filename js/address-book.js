@@ -34,3 +34,37 @@ function sortObjArray(objArray, propName) {
     });
 } //sortObjArray()
 
+function render(entries) {
+    var $template = $('.template person');
+    var $address = $('.address-book');
+    var $instance;
+    address.hide();
+    //address.empty();
+    $.each(entries, function(){
+        instance = template.clone();
+        instance.find('.first').html(.first);
+        instance.find('.last').html(.last);
+        instance.find('.title').html(.title);
+        instance.find('.dept').html(.dept);
+        instance.find('.pic').attr({
+            src: this.pic,
+            alt: 'Picture of ' + this.first + this.last
+        });
+       
+        instance.removeClass('template');
+        address.append(instance);
+        //address.fadeIn();
+}
+
+/*
+
+$(function() {
+    sortObjArray(entries, last);
+    render(entries);
+
+    $(.sort-ui .btn).click(function(){
+        
+    });
+});
+*/
+
